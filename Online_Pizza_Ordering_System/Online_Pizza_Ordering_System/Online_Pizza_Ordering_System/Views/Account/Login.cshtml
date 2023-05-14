@@ -1,0 +1,177 @@
+@model Online_Pizza_Ordering_System.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<html>
+    <head>
+    <style>
+        body {
+            background-image: url(/Uploads/a1b0b38a-1e6d-41d7-9871-6bfe0fef00c5.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            /*background-blend-mode: darken;*/
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container-fluid">
+
+<form asp-controller="Account" asp-action="Login" method="post"  role="form">
+           @* <h4 style="color:white"><b>Enter your details below</b></h4>*@
+               @* <hr />*@
+   @* <input type="hidden" asp-for="ReturnUrl" />*@
+@*<div asp-validation-summary="All" class="text-danger"></div>*@
+<h4>Please log in here.</h2>
+    <div class="form-group" >
+        <label asp-for="UserName"  class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+                <input asp-for="UserName" class="form-control" placeholder="Username" />
+                @*<i class="bi bi-file-person-fill "></i>*@
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Password" class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-4">
+            <div class="button">
+                <input type="submit" class="btn btn-primary" value="Log in"/>&nbsp; &nbsp;
+            <a class="btn btn-primary" asp-controller="Account" asp-action="Register"><i class="bi bi-file-person-fill"></i>Register</a>
+        </div>
+    </div>
+</form>
+
+    </div>
+
+</body>
+</html>
+@*<div class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../../index2.html"><b>Admin</b>LTE</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <form action="../../index2.html" method="post">
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Email">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <div class="social-auth-links text-center">
+                <p>- OR -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                    <i class="fa fa-facebook"></i> Sign in using
+                    Facebook
+                </a>
+                <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                    <i class="fa fa-google-plus"></i> Sign in using
+                    Google+
+                </a>
+            </div>
+            <!-- /.social-auth-links -->
+
+            <a href="#">I forgot my password</a><br>
+            <a href="register.html" class="text-center">Register a new membership</a>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <script src="~/js/icheck.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/jQuery-2.2.0.min.js"></script>
+    <script>
+        $(function () {
+          $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+          });
+        });
+    </script>
+
+
+</div>*@
+
+@*<h2>Login</h2>
+
+<form asp-action="Login">
+    <div class="form-horizontal">
+        <h4>LoginViewModel</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="UserName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<style>
+    bg-img{
+        background-image: url("/Uploads/892bd26a-fa7c-44e4-85ae-00b1f1a73c90.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+</style>
